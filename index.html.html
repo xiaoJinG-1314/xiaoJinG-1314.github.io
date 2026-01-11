@@ -113,8 +113,6 @@
             flex-grow: 1;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
         }
         
         .download-btn {
@@ -211,7 +209,7 @@
         <div class="options-grid">
             <div class="option-card">
                 <h3 class="option-title">1.20.1拔刀剑武士道之旅</h3>
-                <p class="option-description">近100个拔刀剑附属，上千把拔刀剑，異次元のゲー管理者，宇宙最强之刃。道士们准备好了吗？【提取码ZRTQ】</p>
+                <p class="option-description">近100个拔刀剑附属，上千把拔刀剑，異次元のゲー管理者，宇宙最强之刃.道士们准备好了吗？【提取码ZRTQ】</p>
                 <button class="download-btn" onclick="window.open('https://pan.quark.cn/s/9c8a366033b0', '_blank')">夸克网盘下载</button>
             </div>
             
@@ -235,9 +233,21 @@
     </div>
 
     <script>
+        // 自定义文字和图片的函数
+        function updatePackInfo(title, description, imageUrl) {
+            document.querySelector('h1').textContent = title || '靖的我的世界整合包';
+            document.getElementById('packDescription').textContent = description || 
+                '欢迎来到靖的我的世界整合包！这个整合包包含了众多优质的整合包，为你带来丰富多样的游戏内容。无论是爽包、冒险还是养老，都能在这里找到乐趣。所有模组都经过精心挑选和配置，确保兼容性和稳定性。';
+            
+            if(imageUrl) {
+                document.getElementById('packImage').innerHTML = `<img src="${imageUrl}" alt="整合包封面" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
+            }
+        }
+
         // 页面加载完成后的一些初始化设置
         document.addEventListener('DOMContentLoaded', function() {
-            // 可以在这里添加额外的初始化代码
+            // 这里可以设置默认的自定义内容
+            // 例如：updatePackInfo('我的自定义整合包', '这是我的自定义描述', 'path/to/my/image.jpg');
         });
     </script>
 </body>
